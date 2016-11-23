@@ -17,9 +17,9 @@ em,i{font-style:normal}
 #nav .ext{float: right;margin-right:55px;margin-top:22.5px;}
 
 /* 幻灯 */
-#guanggao{position:relative;width:100%; height:840px; margin-bottom: 20px; overflow:hidden;}
+#guanggao{position:relative;width:100%;  margin-bottom: 20px;}
 #guanggao a{display:none;overflow:visible;border:0}
-#guanggao img{position:absolute;left:0;top:0;width:100%;height:840px;}
+#guanggao img{position:absolute;left:0;top:0;width:100%;}
 #guanggao .sz{position:absolute;bottom:15px;right:450px}
 /*#guanggao .sz span{float:right;height:24px;width:24px;background-color:#000;background-color:rgba(0, 0, 0, .6);_background-color:#000;color:#fff;font:400 15px/26px Arial;text-align:center;border-radius:12px;-moz-border-radius:12px;-webkit-border-radius:12px;margin-right:5px;cursor:pointer}*/
 #guanggao .sz span{float:right;height:5px;width:30px;background-color:#888;background-color:rgba(0, 0, 0, .6);_background-color:#888;margin-right:5px;cursor:pointer;text-indent:-9999px;}
