@@ -1,5 +1,20 @@
 $(document).ready(function(){
-    
+    $(".case").mouseover(function(){
+        var width  = $(this).width();
+        var height = $(this).height();
+        $(this).css('width', width).css('height', height);
+        $(this).find('img').animate({
+            height:(height*1.1)+'px',
+            width:(width*1.1)+'px',
+        }, 300);
+        $(this).find('.desc').show();
+    }).mouseleave(function(){
+        $(this).find('img').animate({
+            height:'100%',
+            width:'100%',
+        }, 300);
+        $(this).find('.desc').hide();
+    });
 });
 
 /*幻灯片*/
