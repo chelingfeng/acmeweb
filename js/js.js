@@ -7,13 +7,13 @@ $(document).ready(function(){
             height:(height*1.1)+'px',
             width:(width*1.1)+'px',
         }, 300);
-        $(this).find('.desc').show();
+        $(this).find('.desc').fadeIn();
     }).mouseleave(function(){
         $(this).find('img').animate({
             height:'100%',
             width:'100%',
         }, 300);
-        $(this).find('.desc').hide();
+        $(this).find('.desc').fadeOut();
     });
 });
 
