@@ -17,14 +17,14 @@ em,i{font-style:normal}
 #nav .ext{float: right;margin-right:55px;margin-top:22.5px;}
 
 /* 幻灯 */
-#guanggao{width:100%;  margin-bottom: 15px;}
+#guanggao{width:100%;  margin-bottom: 15px;position: relative;}
 #guanggao a{border:0;display: none}
 #guanggao img{left:0;top:0;width:100%;}
-#guanggao .sz{bottom:15px;right:450px}
-/*#guanggao .sz span{float:right;height:24px;width:24px;background-color:#000;background-color:rgba(0, 0, 0, .6);_background-color:#000;color:#fff;font:400 15px/26px Arial;text-align:center;border-radius:12px;-moz-border-radius:12px;-webkit-border-radius:12px;margin-right:5px;cursor:pointer}*/
-#guanggao .sz span{float:right;height:5px;width:30px;background-color:#888;background-color:rgba(0, 0, 0, .6);_background-color:#888;margin-right:5px;cursor:pointer;text-indent:-9999px;}
-#guanggao .sz span.wu{}
-#guanggao .sz span.liang{background-color:#208460}
+#guanggao .sz{position: absolute;display: none}
+#guanggao .sz span{float:left;height:12px;width:12px;border-radius:50%;background-color:#c8c8c8;margin-right:20px;cursor:pointer;text-indent:-9999px;}
+#guanggao .sz span.liang{background-color:#545454}
+#guanggao .left{cursor:pointer;position: absolute;display: none;background: url(../images/left.png) 0 0 no-repeat;width: 44px; height: 78px}
+#guanggao .right{cursor:pointer;position: absolute;display: none;background: url(../images/right.png) 0 0 no-repeat;width: 44px; height: 78px}
 
 #index-case{width: 1600px;overflow:hidden;margin: 0 auto;}
 #index-case .case{

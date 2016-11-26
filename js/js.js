@@ -1,4 +1,38 @@
 $(document).ready(function(){
+    function showCase(){
+        var w_height = $(window).height();
+        $("#index-case .case").each(function(index){
+            var thisTop = $(this).offset().top;
+            if(thisTop - w_height < 0){
+                $(this).addClass('on');
+            }
+        });
+    }
+    showCase();
+    $('body').scroll(function(){
+        showCase();
+    });
+    var g_width  = $("#guanggao").width();
+    var g_height = $("#guanggao").height();
+    $("#guanggao .sz").css('top', g_height - 60).css('left', g_width/2 + $('#guanggao .sz').width()/2).show();
+    $("#guanggao .left").css('left', 70).css('top', g_height/2 ).show().click(function(){
+        var index = $("#guanggao .sz .liang").index();
+        if(index == 0){
+            index = $("#guanggao .sz span").length - 1;
+        }else{
+            index--;
+        }
+        $("#guanggao .sz span:eq("+index+")").trigger('mouseover');
+    });
+    $("#guanggao .right").css('right', 70).css('top', g_height/2 ).show().click(function(){
+        var index = $("#guanggao .sz .liang").index();
+        if(index == ($("#guanggao .sz span").length) - 1){
+            index = 0;
+        }else{
+            index++;
+        }
+        $("#guanggao .sz span:eq("+index+")").trigger('mouseover');
+    });
     $(".case").mouseover(function(){
         var width  = $(this).width();
         var height = $(this).height();
