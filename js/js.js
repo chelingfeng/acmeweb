@@ -1,16 +1,18 @@
 $(document).ready(function(){
-    function showCase(){
+    function showCase(obj){
         var w_height = $(window).height();
-        $("#index-case .case").each(function(index){
+        $(obj+" .case").each(function(index){
             var thisTop = $(this).offset().top;
             if(thisTop - w_height < 0){
                 $(this).addClass('on');
             }
         });
     }
-    showCase();
+    showCase('#index-case');
+    showCase('#work-case');
     $('body').scroll(function(){
-        showCase();
+        showCase('#index-case');
+        showCase('#work-case');
     });
     var g_width  = $("#guanggao").width();
     var g_height = $("#guanggao").height();
