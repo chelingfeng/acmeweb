@@ -1,7 +1,7 @@
 /* 格式化 */
 body,div,span,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,input,button,select,option,textarea,p,th,td{margin:0;padding:0}
 h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
-body, html{font-family:"微软雅黑",Helvetica,"黑体",Arial,Tahoma;font-size:12px; color:#666; line-height:1.5;height:100%;overflow-x:hidden;}
+body, html{background:#e4e4e4; font-family:"微软雅黑",Helvetica,"黑体",Arial,Tahoma;font-size:12px; color:#666; line-height:1.5;height:100%;overflow-x:hidden;}
 li{list-style:none}
 input,textarea,select{outline:0; border:1px solid #e7e7eb;font-family:"微软雅黑",Helvetica,"黑体",Arial,Tahoma;font-size:14px; color:#666; }
 img{border:none}
@@ -62,6 +62,10 @@ em,i{font-style:normal}
 #work-nav ul{font-size: 22px;float: right;}
 #work-nav ul li{float: left;margin-right: 40px}
 #work-nav ul li a{color: #000;}
+#work-nav ul li p{height: 3px;background: #008f6c}
+#work-nav ul li p.right{float:right;width: 0%;margin-right:50%;margin-top: -3px}
+#work-nav ul li p.left{float:left;width: 0%;margin-left:50%;}
+#work-nav ul li.on p{width: 50%;}
 #work-case{width: 1633px;overflow:hidden;margin: 0 auto;}
 #work-case .case{
 	transition:opacity 0.8s, 
@@ -83,4 +87,21 @@ em,i{font-style:normal}
 #work-case .case .desc{display:none;width: 100%;height: 100%;background: rgba(0, 143, 108, 0.8);position: absolute;top:0;padding: 10px 40px;color: #fff;font-size: 30px}
 #work-case .case.on{opacity: 1;margin-top: 0}
 
+#detail{margin:0 auto;width: 1590px;margin-top:15px;background: #008f6c;color: #fff}
+#detail .show_img{width: 1590px;float: left}
+#detail .thumb{margin-left:275px;margin-top:25px;width: 980px;float: left}
+#detail .thumb li{float:left;margin-right:10px;cursor:pointer}
+#detail .thumb li img{width: 80px;height: 80px;border: 2px solid #000}
+#detail .thumb li.liang img{border: 2px solid #fff}
+#detail .content{margin-bottom:80px;margin-top:40px;margin-left:275px;width: 980px;float: left;font-size:16px;line-height: 150% }
+
+.service_message{text-align:right;font-weight:bold;width: 1590px;margin: 0 auto;line-height: 200px;font-size: 80px;color: #000}
+.service_item{padding:90px 0;width: 1590px;height: 175px;background: #000;margin:0 auto;margin-bottom: 10px;color: #fff;font-size: 80px}
+.service_item p{margin-left:70px;line-height: 110%}
+
+#about{margin: 0 auto;width: 1590px}
+#about .title{margin-left: 600px;color: #343434;font-size:25px;margin-top: 80px}
+#about .content{margin-left: 600px;color: #343434;font-size:20px;margin-top: 50px}
+#about .honor{margin-left: 600px;color: #343434;font-size:22px;margin-top: 50px}
+#about .honor img{margin-top: 30px;margin-bottom:85px}
 

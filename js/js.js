@@ -3,13 +3,13 @@ $(document).ready(function(){
         var w_height = $(window).height();
         $(obj+" .case").each(function(index){
             var thisTop = $(this).offset().top;
-            if(thisTop - w_height < 0){
+            if(thisTop - w_height < 100){
                 $(this).addClass('on');
             }
         });
     }
-    showCase('#index-case');
-    showCase('#work-case');
+    // showCase('#index-case');
+    // showCase('#work-case');
     $('body').scroll(function(){
         showCase('#index-case');
         showCase('#work-case');
@@ -50,6 +50,26 @@ $(document).ready(function(){
             width:'100%',
         }, 300);
         $(this).find('.desc').fadeOut();
+    });
+
+    $("#work-nav ul li").mouseover(function(){
+        if($(this).hasClass('on')){ return false; }
+        $(this).find('p').animate({
+            width:'50%',
+        }, 300);
+    }).mouseleave(function(){
+        if($(this).hasClass('on')){ return false; }
+        $(this).find('p').animate({
+            width:'0%',
+        }, 300);
+    });
+
+    $(".show_img").attr('src', $(".thumb li img:eq(0)").attr('data-img'));
+
+    $(".thumb li").click(function(){
+        $(".thumb li").removeClass('liang');
+        $(this).removeClass('liang');
+        $(".show_img").attr('src', $(this).find('img').attr('data-img'));
     });
 });
 
