@@ -71,6 +71,22 @@ $(document).ready(function(){
         $(this).removeClass('liang');
         $(".show_img").attr('src', $(this).find('img').attr('data-img'));
     });
+
+    
+
+    setInterval(function(){ changePoint(); }, 1200);
+
+    function changePoint(){
+        $(".point").animate({
+            width:'38px',
+            height:'38px',
+        }, 600).animate({
+            width:'28px',
+            height:'28px',
+        }, 600);
+    }
+
+    changePoint();
 });
 
 /*幻灯片*/
