@@ -20,16 +20,16 @@
         </ul>
     </div>
     <div id="guanggao">
-        <a target="_blank" style="display:block"><img src="images/banner5.png"></a>
-        <!-- <a target="_blank"><img src="images/banner4.png"></a> -->
-        <a target="_blank"><img src="images/banner3.png"></a>
-        <!-- <a target="_blank"><img src="images/banner2.png"></a> -->
-        <!-- <a target="_blank"><img src="images/banner1.png"></a> -->
+        <div class="mask">
+            <a target="_blank"><img src="images/banner5.png"></a>
+            <a target="_blank"><img src="images/banner3.png"></a>
+            <a target="_blank"><img src="images/banner3.png"></a>
+            <div class="k0"></div>
+        </div>
         <div class="sz">
-            <!-- <span>4</span> -->
-            <!-- <span>3</span> -->
             <span class="liang">1</span>
             <span>2</span>
+            <span>3</span>
         </div>
         <div class="left" /></div>
         <div class="right" /></div>
@@ -104,6 +104,10 @@
         </div>
        
     </div>
-    <script type="text/javascript">$('#guanggao').liteNav(4000);</script>   
+    <script type="text/javascript">
+        setInterval(function(){
+            $("#guanggao .right").trigger('click');
+        }, 3000);
+    </script>   
 </body>
 </html>

@@ -1,5 +1,13 @@
 $(document).ready(function(){
-    // alert($(window).width());
+    $(window).resize(function () {          
+        if($(window).width() < 1650){
+            $("body").css('zoom', $(window).width() / 1700);
+        }
+    });
+    if($(window).width() < 1650){
+        $("body").css('zoom', $(window).width() / 1700);
+        // alert($(window).height() / 1700);
+    }
     function showCase(obj){
         var w_height = $(window).height();
         $(obj+" .case").each(function(index){
@@ -9,6 +17,8 @@ $(document).ready(function(){
             }
         });
     }
+    $("#guanggao .mask a").css('width', (100 / $(".mask a").length) + '%');
+    $("#guanggao .mask").css('width', (100 * $(".mask a").length) + '%');
     // showCase('#index-case');
     // showCase('#work-case');
     $('body').scroll(function(){
@@ -36,6 +46,16 @@ $(document).ready(function(){
         }
         $("#guanggao .sz span:eq("+index+")").trigger('mouseover');
     });
+
+    $("#guanggao .sz span").mouseover(function(){
+        var marginLeft = 100 * $(this).index();
+        $("#guanggao .mask").animate({
+            marginLeft:'-'+marginLeft+'%',
+        }, 600);
+        $("#guanggao .sz span").removeClass('liang');
+        $("#guanggao .sz span:eq("+$(this).index()+")").addClass('liang');
+    });
+
     $(".case").mouseover(function(){
         var width  = $(this).width();
         var height = $(this).height();
@@ -65,12 +85,17 @@ $(document).ready(function(){
         }, 300);
     });
 
-    $(".show_img").attr('src', $(".thumb li img:eq(0)").attr('data-img'));
-
+    // $(".show_img").attr('src', $(".thumb li img:eq(0)").attr('data-img'));
+    $("#detail .show_img").css('width', (100 / $(".show_img").length) + '%');
+    $("#detail .mask").css('width', (100 * $(".show_img").length) + '%');
     $(".thumb li").click(function(){
         $(".thumb li").removeClass('liang');
         $(this).addClass('liang');
-        $(".show_img").attr('src', $(this).find('img').attr('data-img'));
+        var marginLeft = 100 * $(this).index();
+        $("#detail .mask").animate({
+            marginLeft:'-'+marginLeft+'%',
+        }, 600);
+        // $(".show_img").attr('src', $(this).find('img').attr('data-img'));
     });
 
     
@@ -89,28 +114,3 @@ $(document).ready(function(){
 
     changePoint();
 });
-
-/*幻灯片*/
-(function ($) {
-    $.fn.extend({
-        "liteNav": function (t) {
-            var $this = $(this), i = 0, $pics = $('#guanggao'), autoChange = function () {
-                var $currentPic = $pics.find('a:eq(' + (i + 1 === 4 ? 0 : i + 1) + ')');
-                $currentPic.css({
-                    display: 'block'
-                }).siblings('a').css({
-                    display: 'none'
-                });
-                $pics.find('.sz>span:contains(' + (i + 2 > 4 ? 4 - i : i + 2) + ')').attr('class', 'liang').siblings('span').attr('class', 'wu');
-                i = i + 1 === 4 ? 0 : i + 1;
-            }, st = setInterval(autoChange, t || 2000);
-            $this.hover(function () {
-                clearInterval(st);
-            }, function () { st = setInterval(autoChange, t || 2000) });
-            $pics.find('.sz>span').mouseover(function () {
-                i = parseInt($(this).text(), 10) - 2;
-                autoChange();
-            });
-        }
-    });
-}(jQuery));
