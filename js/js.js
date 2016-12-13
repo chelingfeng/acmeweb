@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    // alert($(window).width());
     function showCase(obj){
         var w_height = $(window).height();
         $(obj+" .case").each(function(index){
@@ -68,7 +69,7 @@ $(document).ready(function(){
 
     $(".thumb li").click(function(){
         $(".thumb li").removeClass('liang');
-        $(this).removeClass('liang');
+        $(this).addClass('liang');
         $(".show_img").attr('src', $(this).find('img').attr('data-img'));
     });
 
