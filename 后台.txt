@@ -1,0 +1,6 @@
+首页管理
+	轮播     id, title, url, imgurl, listorder
+	首页内容  id, title, url, imgurl, listorder
+
+案列管理
+	id, title, 标题图, 介绍,分类， 详情图列表（缩略图，大图）

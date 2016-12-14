@@ -51,7 +51,7 @@ $(document).ready(function(){
         var marginLeft = 100 * $(this).index();
         $("#guanggao .mask").animate({
             marginLeft:'-'+marginLeft+'%',
-        }, 600);
+        }, 900);
         $("#guanggao .sz span").removeClass('liang');
         $("#guanggao .sz span:eq("+$(this).index()+")").addClass('liang');
     });
@@ -61,14 +61,18 @@ $(document).ready(function(){
         var height = $(this).height();
         $(this).css('width', width).css('height', height);
         $(this).find('img').animate({
-            height:(height*1.1)+'px',
-            width:(width*1.1)+'px',
+            height:(height*1.2)+'px',
+            width:(width*1.2)+'px',
+            marginLeft:'-'+(width*0.1)+'px',
+            marginTop:'-'+(height*0.1)+'px',
         }, 300);
         $(this).find('.desc').fadeIn();
     }).mouseleave(function(){
         $(this).find('img').animate({
             height:'100%',
             width:'100%',
+            marginLeft:'0px',
+            marginTop:'0px',
         }, 300);
         $(this).find('.desc').fadeOut();
     });
@@ -104,13 +108,16 @@ $(document).ready(function(){
 
     function changePoint(){
         $(".point").animate({
-            width:'38px',
-            height:'38px',
-        }, 600).animate({
-            width:'28px',
             height:'28px',
+            width:'28px',
+            top:'86px',
+            left:'1146px',
+        }, 600).animate({
+            height:'38px',
+            width:'38px',
+            top:'80px',
+            left:'1140px',
         }, 600);
     }
 
-    changePoint();
 });
